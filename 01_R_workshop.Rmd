@@ -1,0 +1,105 @@
+---
+title: "01_R_workshop"
+author: "Isra Aman Aziz"
+date: "2026-10-10"
+output: pdf_document
+---
+
+**DAY 1:**
+Topics covered in R basics:
+
+What is R? 
+R vs Rstudio.
+Why is it needed for Bioinformatics?
+What are the 4 panes of Rstudio? 
+What is r and Rmd extension?
+What are libraries and packages?
+What is bioconductor? 
+Basic arithmetic operations, sci-notations, Variable and assigning values, calling variables.
+Storing multiple data in a single variable, list stored as vector, combine function
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readr)
+```
+
+
+```{r basic arithmetic operations}
+2+2
+2-1
+2/3
+2*3
+2^3
+
+10%%3 #remainder
+
+10%/%3 # quotient
+
+
+2+3 *4
+
+(2+3)*4
+```
+
+
+```{r sci-notations}
+
+# 1 billion = 1e9
+# 1000 = 1e3
+# 0.001 = 1e-3
+# 25000 = 2.5e4
+```
+
+# In 1000 bases - how many codons? and leftover bases?
+```{r}
+1000 %/% 3  #codons
+
+1000 %% 3 #leftover bases
+```
+
+#lets say you have 900 bases - how many codons ? and how many leftover bases?
+```{r}
+900 %/% 3 #whole count of bases
+
+900%%3 #remaining
+```
+# PCR tube starts with 5 copies; how many copies after 10 cycles?
+```{r}
+5*2^10
+```
+
+```{r assigning values to variables}
+x <- 2
+y <- "a"
+x1 <- 4
+z <- 5*2^10
+
+x2 <- x + x1
+```
+
+# 5x # variables cannot start with a number
+
+```{r calling variables}
+x 
+y 
+z
+x2
+```
+
+# gene matrix = 5 genes x 5 samples
+```{r combine function}
+gene_expression <- c(150, 200, 120, 300, 400)  # list stored as vectors
+gene_expression
+
+subjects <- c("Math", "Science", "Bioinfo")  # for string double quotes
+subjects
+
+flags <- c("TRUE", "FALSE")
+flags
+```
